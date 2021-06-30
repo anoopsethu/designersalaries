@@ -127,10 +127,11 @@ textarea{
 		padding: 80px 24px 0px 24px;
 	}
 	.form-right{
-		margin: 32px -24px 0px -24px;
-		border-radius: 0px;
-		padding: 32px 24px 40px 24px;
-		height: auto;
+	    margin: 32px -24px 0px -24px;
+	    border-radius: 0px;
+	    padding: 32px 24px 40px 24px;
+	    min-height: 480px;
+	    height: fit-content;
 	}
 	.form-header{
 		font-size: 21px;
@@ -151,6 +152,10 @@ textarea{
 	.bg-img{
 		display: none;
 	}
+	.thanks-icon{
+		width: 180px;
+	}
+
 }
 @media (min-width: 1200px){
 	.container {
