@@ -80,7 +80,7 @@
 
 			console.log(999, validateEmail($email));
 
-			if ($email.length>0 && $name.length>0) {
+			if ($email.length>0 && $name.length>0 && $designation.length>0 && $company.length>0) {
 				if(validateEmail($email)){
 					$("#submit").text("Submitting...");
 					base('LeadGen').create([
