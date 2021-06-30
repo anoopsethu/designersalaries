@@ -102,12 +102,20 @@ textarea{
 }
 .thanks-icon{
 	position: absolute;
-	bottom: 20%;
+	bottom: 10%;
 	right: 0px;
-	width: 240px;
+	width: 180px;
 }
 .error-text{
 	color: #FF8282;
+}
+.sm-link{
+	display: inline-block;
+	margin-right: 20px;
+}
+.sm-link img{
+	max-width: 48px;
+	border-radius: 1000px;
 }
 
 @media(max-width: 800px){
@@ -153,7 +161,8 @@ textarea{
 		display: none;
 	}
 	.thanks-icon{
-		width: 180px;
+		width: 160px;
+		bottom: 6%;
 	}
 
 }
