@@ -167,6 +167,9 @@ textarea{
 		width: 160px;
 		bottom: 6%;
 	}
+	body{
+	    padding: 0px 12px;
+	}
 
 }
 @media (min-width: 1200px){
