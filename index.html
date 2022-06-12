@@ -3,22 +3,23 @@
 <head>
 	<!-- Primary Meta Tags -->
 	<title>Designer Salaries</title>
-	<meta name="title" content="Designer Salaries in India">
-	<meta name="description" content="A comprehensive analysis of the design industry salaries in India, based on data collected from 650+ participants">
+	<meta name="title" content="Designer Salaries in India - 2022">
+	<meta name="description" content="Join our mission to bring greater transparency and fairness to pay amongst UX Design roles in India.
+">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://designersalaries.in/">
-	<meta property="og:title" content="Designer Salaries in India">
-	<meta property="og:description" content="A comprehensive analysis of the design industry salaries in India, based on data collected from 650+ participants">
+	<meta property="og:title" content="Designer Salaries in India - 2022">
+	<meta property="og:description" content="Join our mission to bring greater transparency and fairness to pay amongst UX Design roles in India.">
 	<meta property="og:image" content="https://designersalaries.in/img/og-image.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://brightnews.co/">
-	<meta property="twitter:title" content="Designer Salaries in India">
-	<meta property="twitter:description" content="A comprehensive analysis of the design industry salaries in India, based on data collected from 650+ participants">
-	<meta property="twitter:image" content="https://designersalaries.in/img/og-image.png">
+	<meta property="twitter:url" content="https://designersalaries.in/">
+	<meta property="twitter:title" content="Designer Salaries in India - 2022">
+	<meta property="twitter:description" content="Join our mission to bring greater transparency and fairness to pay amongst UX Design roles in India.">
+	<meta property="twitter:image" content="https://designersalaries.in/img/preview-image.png">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -30,107 +31,101 @@
 
 </head>
 <body>
-	<div class="pattern-left"></div>
-	<img class="bg-img" src="img/bg.png" />
-	<div class="container main">
-		<div class="row">
-			<div class="col-md-6">
-				<img class="header-img" src="img/header.svg">
-			</div>
-			<div class="col-md-6">
-				<div class="form-right">
-					<div class="not-filled" id="form-not-filled">
-						<h3 class="form-header">Get the report by email</h3>
-						<p class="form-desc" id="normal-text">Detailed report is waiting for you. Enter your details to get it in your inbox :)</p>
-						<p class="form-desc error-text" id="error-text-1" style="display: none;">Please enter a valid email address</p>
-						<p class="form-desc error-text" id="error-text-2" style="display: none;">Please enter all the details to continue</p>
-						<input type="text" id="name" name="name" class="form-control form-text" placeholder="Your name">
-						<input type="text" id="email" name="email" class="form-control form-text" placeholder="Email address">
-						<input type="text" id="company" name="company" class="form-control form-text" placeholder="Company name">
-						<input type="text" id="designation" name="designation" class="form-control form-text" placeholder="Designation">
-						<a class="form-btn" id="submit">Submit</a>
-					</div>
-					<div class="filled" id="form-success" style="display: none;">
-						<h3 class="form-header">See you soon in your inbox</h3>
-						<p class="form-desc">You’ll soon receive the detailed salary report in your inbox.</p>
-						<p class="form-desc">In the meanwhile, you can give us a follow on social media ;)</p>
-						<a class="sm-link" href="https://www.instagram.com/zetaux/" target="_blank">
-							<img src="img/ig-logo.png">
-						</a>
-						<a class="sm-link" href="https://twitter.com/zetaux1" target="_blank">
-							<img src="img/twitter-logo.png">
-						</a>
-						<img src="img/thanks.png" class="thanks-icon">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-  	<script type="text/javascript" src="js/airtable.browser.js"></script>
-	<script type="text/javascript">
-
-		var AIRTABLE_API_KEY = "keyP4ed7cEvqbyG0k";
-		var AIRTABLE_BASE_ID = "appWDpFMZ0QQMuxlk";
-
-		var Airtable = require('airtable');
-
-		var base = new Airtable({apiKey: AIRTABLE_API_KEY}).base(AIRTABLE_BASE_ID);
-
-		$("#submit").click(() => {
-
-
-			var $name = $("#name").val();
-			var $email = $("#email").val();
-			var $designation = $("#designation").val();
-			var $company = $("#company").val();
-
-			console.log(999, validateEmail($email));
-
-			if ($email.length>0 && $name.length>0 && $designation.length>0 && $company.length>0) {
-				if(validateEmail($email)){
-					$("#submit").text("Submitting...");
-					base('LeadGen').create([
-					  {
-					    "fields": {
-					    	"Name": $name,
-							"Email": $email,
-							"Company": $company,
-							"Designation": $designation,
-					    }
-					  },
-					], function(err, records) {
-					  if (err) {
-					    console.error(err);
-					    return;
-					  }
-					  records.forEach(function (record) {
-					    $("#form-not-filled").fadeOut(300, ()=>{
-					    	$("#form-success").fadeIn(300);
-					    });
-					  });
-					});	
-				} else {
-					$("#normal-text").fadeOut(100, ()=> {
-					   	$("#error-text-1").fadeIn(100);
-					});
-					$("#error-text-2").fadeOut(100, ()=> {
-					   	$("#error-text-1").fadeIn(100);
-					});
-				}
-			} else {
-				$("#normal-text").fadeOut(100, ()=> {
-				   	$("#error-text-2").fadeIn(100);
-				});
-			}
-		});
-
-		function validateEmail(email) 
-	    {
-	        var re = /\S+@\S+\.\S+/;
-	        return re.test(email);
-	    }
-
-	</script>
+<iframe
+      id="JotFormIFrame-221601742962049"
+      title="UX Design: Compensation structure in India 2022"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allowfullscreen="true"
+      allow="geolocation; microphone; camera"
+      src="https://form.jotform.com/221601742962049"
+      frameborder="0"
+      style="
+      min-width: 100%;
+      height:539px;
+      border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script type="text/javascript">
+      var ifr = document.getElementById("JotFormIFrame-221601742962049");
+      if (ifr) {
+        var src = ifr.src;
+        var iframeParams = [];
+        if (window.location.href && window.location.href.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+        }
+        if (src && src.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+          src = src.substr(0, src.indexOf("?"))
+        }
+        iframeParams.push("isIframeEmbed=1");
+        ifr.src = src + "?" + iframeParams.join('&');
+      }
+      window.handleIFrameMessage = function(e) {
+        if (typeof e.data === 'object') { return; }
+        var args = e.data.split(":");
+        if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+        if (!iframe) { return; }
+        switch (args[0]) {
+          case "scrollIntoView":
+            iframe.scrollIntoView();
+            break;
+          case "setHeight":
+            iframe.style.height = args[1] + "px";
+            break;
+          case "collapseErrorPage":
+            if (iframe.clientHeight > window.innerHeight) {
+              iframe.style.height = window.innerHeight + "px";
+            }
+            break;
+          case "reloadPage":
+            window.location.reload();
+            break;
+          case "loadScript":
+            if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+            var src = args[1];
+            if (args.length > 3) {
+                src = args[1] + ':' + args[2];
+            }
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+            break;
+          case "exitFullscreen":
+            if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+            else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+            else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+            else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+            else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+            break;
+        }
+        var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+        if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+          var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+          iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+        }
+      };
+      window.isPermitted = function(originUrl, whitelisted_domains) {
+        var url = document.createElement('a');
+        url.href = originUrl;
+        var hostname = url.hostname;
+        var result = false;
+        if( typeof hostname !== 'undefined' ) {
+          whitelisted_domains.forEach(function(element) {
+              if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
+                  result = true;
+              }
+          });
+          return result;
+        }
+      };
+      if (window.addEventListener) {
+        window.addEventListener("message", handleIFrameMessage, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onmessage", handleIFrameMessage);
+      }
+      </script>
 </body>
 </html>
